@@ -23,7 +23,6 @@ var DefaultClient = &Client{&Credentials{
 
 func request(url string, pointer interface{}) error {
 	response, err := http.DefaultClient.Get(url)
-
 	if err != nil {
 		return err
 	}

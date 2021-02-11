@@ -79,24 +79,30 @@ type ResponseMarketHolidays []struct {
 }
 
 // ResponseTickers - see method(s)
-type ResponseTickers []struct {
-	Ticker      string `json:"ticker"`
-	Name        string `json:"name"`
-	Market      string `json:"market"`
-	Locale      string `json:"locale"`
-	Currency    string `json:"currency"`
-	Active      bool   `json:"active"`
-	PrimaryExch string `json:"primaryExch"`
-	Type        string `json:"type"`
-	Codes       struct {
-		Cik     string `json:"cik"`
-		Figiuid string `json:"figiuid"`
-		Scfigi  string `json:"scfigi"`
-		Cfigi   string `json:"cfigi"`
-		Figi    string `json:"figi"`
-	} `json:"codes"`
-	Updated time.Time `json:"updated"`
-	URL     string    `json:"url"`
+type ResponseTickers struct {
+	Page    int64  `json:"page"`
+	PerPage int64  `json:"perPage"`
+	Count   int64  `json:"count"`
+	Status  string `json:"status"`
+	Tickers []struct {
+		Ticker      string `json:"ticker"`
+		Name        string `json:"name"`
+		Market      string `json:"market"`
+		Locale      string `json:"locale"`
+		Currency    string `json:"currency"`
+		Active      bool   `json:"active"`
+		PrimaryExch string `json:"primaryExch"`
+		Type        string `json:"type"`
+		Codes       struct {
+			Cik     string `json:"cik"`
+			Figiuid string `json:"figiuid"`
+			Scfigi  string `json:"scfigi"`
+			Cfigi   string `json:"cfigi"`
+			Figi    string `json:"figi"`
+		} `json:"codes"`
+		Updated string `json:"updated"`
+		URL     string `json:"url"`
+	} `json:"tickers"`
 }
 
 // ResponseTypes - see method(s)
